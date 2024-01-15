@@ -6,6 +6,7 @@ date: 2024-01-15 20:15:10 +0900
 categories: [Develope, NLP]
 tags: [nlp,tokenization,토큰]
 render_with_liquid: false
+pin: true
 ---
 # Tokenization(토큰화)
 자연어 처리에서 얻은 코퍼스(corpus) 데이터가 학습시키기에 적당하게 전처리 되지 않은 상태라면, 보통 의미가 있는 단위로 토큰으로 변환시킨다.
@@ -97,7 +98,7 @@ print(hannanum.pos(u'아버지가방에들어가신다.'))
 [('아버지', 'N'), ('가방', 'N'), ('에', 'J'), ('들', 'P'), ('어', 'E'), ('가', 'P'), ('시', 'E'), ('ㄴ다', 'E')]
 ```
 
-#
+
 #### 1.2. Kkma
 
 ```python
@@ -113,7 +114,7 @@ print(kkma.pos(u'아버지가방에들어가신다.'))
 [('아버지', 'NNG'), ('가', 'JKS'), ('방', 'NNG'), ('에', 'JKM'), ('들어가', 'VV'), ('시', 'EPH'), ('ㄴ다', 'EFN'), ('.', 'SF')]
 ```
 
-#
+
 #### 1.3. Komoran
 
 ```python
@@ -129,7 +130,7 @@ print(komoran.pos(u'아버지가방에들어가신다.'))
 [('아버지', 'NNP'), ('가방', 'NNP'), ('에', 'JKB'), ('들어가', 'VV'), ('시', 'EP'), ('ㄴ다', 'EF'), ('.', 'SF')]
 ```
 
-#
+
 #### 1.4. Mecab
 
 ```python
@@ -145,7 +146,7 @@ print(mecab.pos(u'아버지가방에들어가신다.'))
 [('아버지', 'NNG'), ('가방', 'NNG'), ('에', 'JKB'), ('들어가', 'VV'), ('신다', 'EP+EC'), ('.', 'SF')]
 ```
 
-#
+
 #### 1.5. Okt(Twitter)
 
 ```python
@@ -161,7 +162,7 @@ print(okt.pos(u'아버지가방에들어가신다.'))
 [('아버지', 'Noun'), ('가방', 'Noun'), ('에', 'Josa'), ('들어가신다', 'Verb'), ('.', 'Punctuation')]
 ```
 
-#
+
 ##### TAG 의미 확인 링크 -> [링크](https://docs.google.com/spreadsheets/d/1OGAjUvalBuX-oZvZ_-9tEfYD2gQe7hTGsgUpiiBSXI8/edit#gid=0)
 
 ### 성능 비교 코드
