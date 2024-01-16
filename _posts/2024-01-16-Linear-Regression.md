@@ -8,14 +8,8 @@ tags: [Pytorch,Linear Regression, ML]
 pin: true
 math: true
 ---
-## DATA Definition
 
-``` python 
-x_train = torch.FloatTensor([[1],[2],[3]])
-y_train = torch.FloatTensor([[2],[4],[6]])
-```
-
-## Hypothesis
+## Hypothesis(가설 세우기)
 
 $$ H(x) = Wx + b $$
 
@@ -25,16 +19,17 @@ b = torch.zeros(1, requires_grad=True)
 hypothesis = x_train * W + b
 ```
 
-## Cost Function
+## Cost Function (비용 함수)
 _비용 함수(cost function) = 손실 함수(loss function) = 오차 함수(error function) = 목적 함수(objective function)_   
 y = Wx + b 에서 W와 b를 구하는 것이 목표이다. 이를 위해서는 W와 b에 대한 cost function을 정의해야 한다. 
+
 $$ mse(W,b) = \frac{1}{m}\sum_{i=1}^{m}(H(x^{(i)}) - y^{(i)})^2 $$
 
 ``` python
 cost = torch.mean((hypothesis - y_train) ** 2)
 ```
 
-## Gradient Descent
+## Gradient Descent (경사 하강법)
 
 $$ W := W - \alpha\frac{\partial}{\partial W}cost(W) $$
 
@@ -151,4 +146,103 @@ for epoch in range(nb_epochs + 1):
         epoch, nb_epochs, hypothesis.squeeze().detach(), cost.item()
     ))
 ```
+
+## nn.Module로 구현하는 선형 회귀
+
+``` python
+import torch.nn as nn
+import torch.nn.functional as F
+
+torch.manual_seed(1)
+
+# 데이터
+x_train = torch.FloatTensor([73, 80, 75],
+                             [93, 88, 93],
+                             [89, 91, 90],
+                             [96, 98, 100],
+                             [73, 66, 70])
+y_train = torch.FloatTensor([[152], [185], [180], [196], [142]])
+# 모델 초기화 및 선언 input_dim = 3, output_dim = 1
+model = nn.Linear(3, 1)
+
+# optimizer 설정
+optimizer = optim.SGD(model.parameters(), lr=1e-5)
+
+nb_epochs = 20
+
+for epoch in range(nb_epochs + 1):
+
+    # H(x) 계산
+    prediction = model(x_train)
+
+    # cost 계산
+    cost = F.mse_loss(prediction, y_train)
+
+    # cost로 H(x) 개선
+    optimizer.zero_grad()
+    cost.backward()
+    optimizer.step()
+
+    print('Epoch {:4d}/{} Cost: {:.6f}'.format(
+        epoch, nb_epochs, cost.item()
+    ))
+```
+
+## 클래스로 파이토치 모델 구현하기
+
+class 형태의 모델 구현 방식은 nn.Module 을 상속받는다. 그리고 __init__()에서 모델의 구조와 동적을 정의하는 생성자를 정의한다. super() 함수를 부르면 여기서 만든 클래스는 nn.Module 클래스의 속성들을 가지고 초기화 된다. forward() 함수는 모델이 학습데이터를 입력받아서 forward 연산을 진행시키는 함수이다.
+foward() 함수는 model 객체를 데이터와 함께 호출하면 자동으로 실행이 된다.
+
+$$ forward : \hat{y} = xW + b $$
+
+``` python
+import torch.nn as nn
+import torch.nn.functional as F
+
+torch.manual_seed(1)
+
+# 데이터
+x_train = torch.FloatTensor([[73, 80, 75],
+                              [93, 88, 93],
+                              [89, 91, 90],
+                              [96, 98, 100],
+                              [73, 66, 70]])
+
+y_train = torch.FloatTensor([[152], [185], [180], [196], [142]])
+
+# 모델을 클래스로 구현
+
+class LinearRegressionModel(nn.Module):
+    def __init__(self, input_dim=3, output_dim=1):
+        super().__init__()
+        self.linear = nn.Linear(input_dim, output_dim)
+
+    def forward(self, x):
+        return self.linear(x)
+
+model = LinearRegressionModel(3,1)
+
+# optimizer 설정
+optimizer = optim.SGD(model.parameters(), lr=1e-5)
+
+nb_epochs = 20
+
+for epoch in range(nb_epochs + 1):
+
+    # H(x) 계산
+    prediction = model(x_train)
+
+    # cost 계산
+    cost = F.mse_loss(prediction, y_train)
+
+    # cost로 H(x) 개선
+    optimizer.zero_grad()
+    cost.backward()
+    optimizer.step()
+
+    print('Epoch {:4d}/{} Cost: {:.6f}'.format(
+        epoch, nb_epochs, cost.item()
+    ))
+```
+
 
