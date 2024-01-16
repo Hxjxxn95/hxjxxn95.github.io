@@ -6,17 +6,11 @@ date: 2024-01-16 10:15:10 +0900
 categories: [Develope, Pytorch]
 tags: [Pytorch, Tensor, Manipulate]
 pin: true
-toc : true
 ---
-
 ## Tensor
 
 ### 2D Tensor
-    
-2D Tesor는 행렬과 같다. 행렬의 행과 열을 각각 dimension 0과 dimension 1이라고 한다. 
-
 |t| = (batch size , dim)
-
 ### 3D Tensor ( in Vision )
 |t| = (batch size , width , height)
 ### 3D Tensor ( in NLP )
@@ -119,9 +113,9 @@ tensor([[ 7., 10.],
         [15., 22.]])
 ````
 
-### Mean ( 평균 )
+## Mean ( 평균 )
 
-#### ex1
+### ex1
 ````python
 t = torch.FloatTensor([1,2])
 t.mean()
@@ -129,7 +123,7 @@ t.mean()
 ````python
 tensor(1.5000)
 ````
-#### ex2 ( 모든 차원 제거 )
+### ex2 ( 모든 차원 제거 )
 ````python
 t = torch.FloatTensor([[1,2],[3,4]])
 t.mean()
@@ -137,7 +131,7 @@ t.mean()
 ````python
 tensor(2.5000)
 ````
-#### ex3 ( 첫 번째 차원 제거 )
+### ex3 ( 첫 번째 차원 제거 )
 ````python
 t = torch.FloatTensor([[1,2],[3,4]])
 t.mean(dim=0)
@@ -145,7 +139,7 @@ t.mean(dim=0)
 ````python
 tensor([2., 3.])
 ````
-#### ex4 ( 마지막 차원 제거 )
+### ex4 ( 마지막 차원 제거 )
 ````python
 t = torch.FloatTensor([[1,2],[3,4]])
 t.mean(dim=1)
@@ -153,7 +147,7 @@ t.mean(dim=1)
 ````python
 tensor([1.5000, 3.5000])
 ````
-#### ex5 ( 마지막 차원 제거 )
+### ex5 ( 마지막 차원 제거 )
 ````python
 t = torch.FloatTensor([[1,2],[3,4]])
 t.mean(dim=-1)
@@ -187,7 +181,7 @@ torch.Size([4, 3])
 ````
 
 
- ### 규칙
+### 규칙
 
  1. view 는 기본적으로 변경 전과 변경 후의 텐서 안의 우너소의 개수가 유지되어야 한다.
  2. -1 을 사용하면 다른 차원으로부터 해당 값을 유추한다.
