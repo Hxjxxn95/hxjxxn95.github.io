@@ -3,7 +3,7 @@ layout : post
 title: Integer Encoding
 author: Hojoon_Kim
 date: 2024-01-21 14:30:10 +0900
-categories: [Develope, DL]
+categories: [Develope, NLP]
 tags: [Pytorch, DL, NLTK, IntegerEncoding]
 pin: true
 math: true
