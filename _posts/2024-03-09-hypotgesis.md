@@ -92,7 +92,7 @@ math: true
 두 모분산을 알고 있는 경우 두 모평균의 동일성에 대한 검정은 아래와 같이 수행한다.
 
 - 귀무가설 설정 : $H_0 : \mu_1 = \mu_2$
-- 검정통계량 : $Z = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$
+- 검정통계량 : $Z = \frac{\bar{X_1} - \bar{X_2}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$
 - 가설검정:
     - 우측검정 : $H_1 : \mu_1 > \mu_2$일 때, $Z > Z_{\alpha}$이면 귀무가설을 기각한다.
     - 좌측검정 : $H_1 : \mu_1 < \mu_2$일 때, $Z < -Z_{\alpha}$이면 귀무가설을 기각한다.
@@ -108,12 +108,12 @@ math: true
 
 두 모분산이 같은 경우에는 합동분산추정량 $s_p^2$을 사용하여 $\bar{X_1} - \bar{X_2}$ 의 t-통계량은 다음과 같다.
 
-$$ t = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} $$
+$$ t = \frac{\bar{X_1} - \bar{X_2} }{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} $$
 
 따라서, 두 모분산이 같은 경우 두 모평균 $\mu_1 - \mu_2$의 차이에 대한 검정은 아래와 같이 수행한다.
 
 - 귀무가설 설정 : $H_0 : \mu_1 = \mu_2$
-- 검정통계량 : $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
+- 검정통계량 : $T_0 = \frac{\bar{X_1} - \bar{X_2} }{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
 - 가설검정:
     - 우측검정 : $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$이면 귀무가설을 기각한다.
     - 좌측검정 : $H_1 : \mu_1 < \mu_2$일 때, $T_0 < -t_{\alpha}$이면 귀무가설을 기각한다.
@@ -124,12 +124,12 @@ $$ t = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} +
 두 모분산이 다른 경우에는 두 모평균 $\mu_1 - \mu_2$의 차이에 대한 검정은 아래와 같이 수행한다.
 
 - 귀무가설 설정 : $H_0 : \mu_1 = \mu_2$
-- 검정통계량 : $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
+- 검정통계량 : $T_0 = \frac{\bar{X_1} - \bar{X_2} }{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
 
 따라서, 두 모분산이 다른 경우 두 모평균 $\mu_1 - \mu_2$의 차이에 대한 검정은 아래와 같이 수행한다.
 
 - 귀무가설 설정 : $H_0 : \mu_1 = \mu_2$
-- 검정통계량 : $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
+- 검정통계량 : $T_0 = \frac{\bar{X_1} - \bar{X_2} }{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
 - 가설검정:
     - 우측검정 : $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$이면 귀무가설을 기각한다.
     - 좌측검정 : $H_1 : \mu_1 < \mu_2$일 때, $T_0 < -t_{\alpha}$이면 귀무가설을 기각한다.
@@ -142,13 +142,13 @@ $$ t = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} +
 
 두 모분산이 같은 경우에는 합동분산추정량 $s_p^2$을 사용하여 $\bar{X_1} - \bar{X_2}$ 의 t-통계량은 다음과 같다.
 
-$$ t = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} $$
+$$ t = \frac{\bar{X_1} - \bar{X_2} }{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} $$
 
 따라서, 두 모분산이 같은 경우 두 모평균 $\mu_1 - \mu_2$의 차이에 대한 검정은 아래와 같이 수행한다.
 
 - 귀무가설 설정 : $H_0 : \mu_1 = \mu_2$
 
-- 검정통계량 : $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
+- 검정통계량 : $T_0 = \frac{\bar{X_1} - \bar{X_2} }{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
 
 - 가설검정:
     - 우측검정 : $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$이면 귀무가설을 기각한다.
@@ -160,7 +160,7 @@ $$ t = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} +
 두 모분산이 다른 경우에는 두 모평균 $\mu_1 - \mu_2$의 차이에 대한 검정은 아래와 같이 수행한다.
 
 - 귀무가설 설정 : $H_0 : \mu_1 = \mu_2$
-- 검정통계량 : $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
+- 검정통계량 : $T_0 = \frac{\bar{X_1} - \bar{X_2} }{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
 - 가설검정:
     - 우측검정 : $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$이면 귀무가설을 기각한다.
     - 좌측검정 : $H_1 : \mu_1 < \mu_2$일 때, $T_0 < -t_{\alpha}$이면 귀무가설을 기각한다.
@@ -233,7 +233,7 @@ $$ F = \frac{S_1^2}{\sigma_1^2} / \frac{S_2^2}{\sigma_2^2} $$
 
 |두 모분산을 아는 경우 |
 |-|
-| $Z = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$ |
+| $Z = \frac{\bar{X_1} - \bar{X_2} }{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$ |
 | $H_1 : \mu_1 > \mu_2$일 때, $Z > Z_{\alpha}$ |
 | $H_1 : \mu_1 < \mu_2$일 때, $Z < -Z_{\alpha}$ |
 | $H_1 : \mu_1 \neq \mu_2$일 때, $Z > Z_{\alpha/2}$ 또는 $Z < -Z_{\alpha/2}$ |
@@ -241,11 +241,11 @@ $$ F = \frac{S_1^2}{\sigma_1^2} / \frac{S_2^2}{\sigma_2^2} $$
 
 | 두 모분산 모르는 경우| 두 모분산이 같다는 근거 있음 | 두 모분산이 같다는 근거 없음 |
 |---|---|---|
-|대표본| $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ | $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ |
+|대표본| $T_0 = \frac{\bar{X_1} - \bar{X_2} }{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ | $T_0 = \frac{\bar{X_1} - \bar{X_2} }{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ |
 || $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$ | $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$ |
 || $H_1 : \mu_1 < \mu_2$일 때, $T_0 < -t_{\alpha}$ | $H_1 : \mu_1 < \mu_2$일 때, $T_0 < -t_{\alpha}$ |
 || $H_1 : \mu_1 \neq \mu_2$일 때, $T_0 > t_{\alpha/2}$ 또는 $T_0 < -t_{\alpha/2}$ | $H_1 : \mu_1 \neq \mu_2$일 때, $T_0 > t_{\alpha/2}$ 또는 $T_0 < -t_{\alpha/2}$ |
-|소표본| $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ | $T_0 = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ |
+|소표본| $T_0 = \frac{\bar{X_1} - \bar{X_2} }{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ | $T_0 = \frac{\bar{X_1} - \bar{X_2} }{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ |
 || $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$ | $H_1 : \mu_1 > \mu_2$일 때, $T_0 > t_{\alpha}$ |
 || $H_1 : \mu_1 < \mu_2$일 때, $T_0 < -t_{\alpha}$ | $H_1 : \mu_1 < \mu_2$일 때, $T_0 < -t_{\alpha}$ |
 || $H_1 : \mu_1 \neq \mu_2$일 때, $T_0 > t_{\alpha/2}$ 또는 $T_0 < -t_{\alpha/2}$ | $H_1 : \mu_1 \neq \mu_2$일 때, $T_0 > t_{\alpha/2}$ 또는 $T_0 < -t_{\alpha/2}$ |
