@@ -274,5 +274,6 @@ p-value는 귀무가설이 참이라고 가정했을 때, 표본에서 계산된
 ### p-value의 계산
 
 - 검정통계량 Z 라 가정
-  $$ p-value = \int_{Z}^{\infty} f(z) dz $$
+- 양측검정일 때
+    $$ p-value = 2 \times \int_{Z}^{\infty} f(z) dz $$
 
