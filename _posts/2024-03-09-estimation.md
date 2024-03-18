@@ -3,7 +3,7 @@ layout : post
 title: 추정(Statistical Estimation)
 author: Hojoon_Kim
 date: 2024-03-09 14:15:10 +0900
-categories: [Statistic, Statistic Estimation]
+categories: [Statistic]
 tags: [Statistic, Statistic Estimation]
 pin: true
 math: true

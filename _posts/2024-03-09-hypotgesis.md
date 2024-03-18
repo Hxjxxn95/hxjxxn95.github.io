@@ -3,7 +3,7 @@ layout : post
 title: 검정(Statistical Hypothesis Testing)
 author: Hojoon_Kim
 date: 2024-03-09 14:15:10 +0900
-categories: [Statistic, Statistic hypothesis testing]
+categories: [Statistic]
 tags: [Statistic, Statistic hypothesis testing]
 pin: true
 math: true
